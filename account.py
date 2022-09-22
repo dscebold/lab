@@ -2,7 +2,7 @@
 
 class Account:
 
-    def __init__(self, name):
+    def __init__(self, name: str):
         """
         This is the constructor method for the Account class
         takes in the account name to be assigned and sets balance to zero
@@ -11,7 +11,7 @@ class Account:
         self.__account_name = name
         self.__account_balance = 0
 
-    def deposit(self, amount):
+    def deposit(self, amount: int) -> bool:
         """
         This method increases account_balance by adding amount
         :param amount: amount to be deposited into account
@@ -22,7 +22,7 @@ class Account:
         self.__account_balance += amount
         return True
 
-    def withdraw(self, amount):
+    def withdraw(self, amount: int) -> bool:
         """
         This method decreases account_balance by subtracting amount
         :param amount: amount to be withdrawn from account
@@ -33,14 +33,14 @@ class Account:
         self.__account_balance -= amount
         return True
 
-    def get_balance(self):
+    def get_balance(self) -> int:
         """
         Gets the account_balance
         :return: Returns the account balance
         """
         return self.__account_balance
 
-    def get_name(self):
+    def get_name(self) -> str:
         """
         Gets the account_name
         :return: Returns the account name
