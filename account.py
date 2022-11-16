@@ -23,7 +23,7 @@ class Account:
             raise ValueError
         except:
             print("Error")
-        if amount < 0:
+        if amount <= 0:
             return False
         self.__account_balance += amount
         return True
@@ -40,7 +40,7 @@ class Account:
             raise ValueError
         except:
             print("Error")
-        if amount < 0 or amount > self.__account_balance:
+        if amount <= 0 or amount > self.__account_balance:
             return False
         self.__account_balance -= amount
         return True
