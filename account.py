@@ -11,14 +11,14 @@ class Account:
         self.__account_name = name
         self.__account_balance = 0
 
-    def deposit(self, amount: int) -> bool:
+    def deposit(self, amount: float) -> bool:
         """
         This method increases account_balance by adding amount
         :param amount: amount to be deposited into account
         :return: Returns true if deposit was successful, returns false if deposit was unsuccessful
         """
         try:
-            amount = int(amount)
+            amount = float(amount)
         except ValueError:
             raise ValueError
         except:
@@ -28,14 +28,14 @@ class Account:
         self.__account_balance += amount
         return True
 
-    def withdraw(self, amount: int) -> bool:
+    def withdraw(self, amount: float) -> bool:
         """
         This method decreases account_balance by subtracting amount
         :param amount: amount to be withdrawn from account
         :return: Returns true if withdraw was successful, returns false if withdraw was unsuccessful
         """
         try:
-            amount = int(amount)
+            amount = float(amount)
         except ValueError:
             raise ValueError
         except:
