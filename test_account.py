@@ -22,12 +22,18 @@ class Test:
         assert self.acc1.get_balance() == 10
         assert self.acc2.get_balance() == 14
         assert self.acc3.get_balance() == 5
+        self.acc1.deposit(1.5)
+        self.acc2.deposit(1.4)
+        self.acc3.deposit(.5)
+        assert self.acc1.get_balance() == 11.5
+        assert self.acc2.get_balance() == 15.4
+        assert self.acc3.get_balance() == 5.5
         self.acc1.withdraw(5)
         self.acc2.withdraw(4)
         self.acc3.withdraw(3)
-        assert self.acc1.get_balance() == 5
-        assert self.acc2.get_balance() == 10
-        assert self.acc3.get_balance() == 2
+        assert self.acc1.get_balance() == 6.5
+        assert self.acc2.get_balance() == 11.4
+        assert self.acc3.get_balance() == 2.5
 
     def test_deposit(self):
         assert self.acc1.deposit(4) is True
