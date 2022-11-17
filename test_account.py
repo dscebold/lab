@@ -30,8 +30,8 @@ class Test:
         assert self.acc3.get_balance() == 2
 
     def test_deposit(self):
-        assert self.acc1.deposit(4) == True
-        assert self.acc1.deposit(-4) == False
+        assert self.acc1.deposit(4) is True
+        assert self.acc1.deposit(-4) is False
         with pytest.raises(ValueError):
             self.acc1.deposit("hhh")
             self.acc2.deposit("ten")
@@ -41,12 +41,12 @@ class Test:
         self.acc1.deposit(10)
         self.acc2.deposit(10)
         self.acc3.deposit(10)
-        assert self.acc1.withdraw(4) == True
-        assert self.acc1.withdraw(-4) == False
-        assert self.acc2.withdraw(10) == True
-        assert self.acc2.withdraw(-4) == False
-        assert self.acc3.withdraw(11) == False
-        assert self.acc3.withdraw(-4) == False
+        assert self.acc1.withdraw(4) is True
+        assert self.acc1.withdraw(-4) is False
+        assert self.acc2.withdraw(10) is True
+        assert self.acc2.withdraw(-4) is False
+        assert self.acc3.withdraw(11) is False
+        assert self.acc3.withdraw(-4) is False
         with pytest.raises(ValueError):
             self.acc1.withdraw("hhh")
             self.acc2.withdraw("ten")
